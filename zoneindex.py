@@ -32,5 +32,4 @@ def build_zone_index(all_tables,coverage_area):
         count.append(temp)
     greatest=max(count)
     return count.index(greatest)
-def proximity_measure():
 main()
