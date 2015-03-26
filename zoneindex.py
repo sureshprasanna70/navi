@@ -33,7 +33,13 @@ def build_zone_index(all_tables,coverage_area):
     for j in range(len(all_tables)):
         temp=0
         for i in range(len(all_tables[j])):
-            if(all_tables[j][i]>=coverage_area):
+            row=j
+            column=i
+            if(all_tables[j][i]==0):
+                print "Swap"
+                row=i
+                column=j
+            if(all_tables[row][column]>=coverage_area):
                 temp=temp+1
         count.append(temp)
     greatest=max(count)
