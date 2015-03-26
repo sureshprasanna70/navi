@@ -15,6 +15,7 @@ def main():
         zone_index=build_zone_index(all_tables,coverage_area)
         print 'Car {0} is the zone index'.format(chr(zone_index+97))
         print all_tables[zone_index]
+        matrix_to_graph(dup_cars,all_tables)
     else:
         print "Enter greater than 2"
 def build_neighbor(dup_cars,tot_cars):
@@ -146,5 +147,7 @@ def dijkstra(aGraph, start):
             heapq.heappop(unvisited_queue)
         unvisited_queue = [(v.get_distance(),v) for v in aGraph if not v.visited]
         heapq.heapify(unvisited_queue)
-
+def matrix_to_graph(tot_cars,all_tables):
+    print tot_cars
+    print "matrix to graph"
 main()
