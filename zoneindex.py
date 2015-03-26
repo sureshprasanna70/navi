@@ -4,21 +4,23 @@ def main():
     zone_index=[]
     print "Total cars"
     tot_cars=int(raw_input())
+    dup_cars=tot_cars
     print "Coverage area"
     coverage_area=int(raw_input())
-    #while(tot_cars>0):
-        #all_tables.append(build_neighbor())
-        #tot_cars=tot_cars-1
-    all_tables=[[-1, 2, 3], [1, -1, 3]]
+    while(tot_cars>0):
+        all_tables.append(build_neighbor(dup_cars))
+        tot_cars=tot_cars-1
+    #all_tables=[[-1, 2, 3], [1, -1, 3]]
     print all_tables
     zone_index=build_zone_index(all_tables,coverage_area)
     print 'Car {0} is the zone index'.format(zone_index)
-def build_neighbor():
+def build_neighbor(dup_cars):
     n_table=[]
-    x=raw_input()
-    while(int(x)!=0):
-        n_table.append(int(x))
-        x=raw_input()
+    no_cars=dup_cars
+    count=0
+    while(count<dup_cars):
+        n_table.append(int(raw_input()))
+        count=count+1
     print n_table
     return n_table
 def build_zone_index(all_tables,coverage_area):
