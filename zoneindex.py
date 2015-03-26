@@ -11,11 +11,13 @@ def main():
         while(tot_cars>0):
             all_tables.append(build_neighbor(dup_cars,tot_cars))
             tot_cars=tot_cars-1
+        print "main"
         print all_tables
         zone_index=build_zone_index(all_tables,coverage_area)
         print 'Car {0} is the zone index'.format(chr(zone_index+97))
         print all_tables[zone_index]
-        matrix_to_graph(dup_cars,all_tables)
+        print all_tables
+        #matrix_to_graph(dup_cars,all_tables)
     else:
         print "Enter greater than 2"
 def build_neighbor(dup_cars,tot_cars):
@@ -150,4 +152,8 @@ def dijkstra(aGraph, start):
 def matrix_to_graph(tot_cars,all_tables):
     print tot_cars
     print "matrix to graph"
+    print all_tables
+    for i in range(len(all_tables)):
+        for j in range(len(all_tables)):
+            print all_tables[i][j]
 main()
